@@ -11,6 +11,7 @@ RUN npm run build
 
 # run phase, terminates first block
 FROM nginx
+EXPOSE 80
 # copy over something from another phase ^^^
 COPY --from=builder /app/build /usr/share/nginx/html
 # default command starts up NGINX for us, so we don't have to run any specific command
